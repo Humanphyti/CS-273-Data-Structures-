@@ -72,7 +72,9 @@ bool PlaceQueen(int column) {
 			if (RowPlacement[row] != UNASSIGN_VALUE) {
 				continue;
 			}
-
+			if (!ValidPosition(column, row))
+				continue;
+			
 			RowPlacement[row] = column;
 
 			if (PlaceQueen(column + 1)) {
